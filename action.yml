@@ -1,0 +1,23 @@
+name: "ECZ-ID Agentic Workflow Trust"
+description: "Review declared GitHub Agentic Workflow authority, tools, safe outputs and compile-pair evidence without executing the agent."
+author: EcoCitizenz Ltd
+branding:
+  icon: shield
+  color: green
+inputs:
+  report-path:
+    description: "Path for the JSON evidence report."
+    required: false
+    default: "eczid-agentic-workflow-trust.json"
+outputs:
+  result-state:
+    description: "OBSERVED, REVIEW_RECOMMENDED or NOT_APPLICABLE."
+  workflow-count:
+    description: "Number of Agentic Workflow Markdown sources reviewed."
+  report-path:
+    description: "Generated JSON report path."
+  next-action-url:
+    description: "One contextual free identity next step, or empty when none is warranted."
+runs:
+  using: node24
+  main: dist/index.js
